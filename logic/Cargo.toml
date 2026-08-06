@@ -38,7 +38,6 @@ bs58 = "0.5.1"
 calimero-sdk = { git = "https://github.com/calimero-network/core.git", tag = "0.11.0-rc.20" }
 calimero-storage = { git = "https://github.com/calimero-network/core.git", tag = "0.11.0-rc.20" }
 calimero-storage-macros = { git = "https://github.com/calimero-network/core.git", tag = "0.11.0-rc.20" }
-thiserror = "1.0.56"
 
 [dev-dependencies]
 # "testing" enables the native mock host (TestHost) for `cargo test`
