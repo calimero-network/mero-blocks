@@ -5,7 +5,6 @@
 
 import bs58 from "bs58";
 import { deflateSync, inflateSync } from "fflate";
-import { createLink } from "@calimero-network/mero-platform";
 
 /** admin-api `SignedGroupOpenInvitation` (field names vary across nodes) */
 export interface SignedInvitation {
@@ -60,23 +59,6 @@ function parsePayload(json: string): WorldInvitePayload | null {
 export function encodeInvite(payload: WorldInvitePayload): string {
   const bytes = new TextEncoder().encode(JSON.stringify(payload));
   return bs58.encode(deflateSync(bytes, { level: 9 }));
-}
-
-/**
- * The app's deep-link slug. The desktop resolves a link by
- * `Application.package`, and links.calimero.network resolves the web build by
- * asking the registry for that same package — so the slug IS the package id.
- * Keep equal to `slug`/`package` in `logic/Cargo.toml`.
- */
-export const APP_SLUG = "com.calimero.meroblocks";
-
-/**
- * The shareable form of an invite code: a canonical HTTPS link that opens the
- * desktop app where it is installed and the published web build otherwise.
- * `decodeInvite` reads a pasted link back, so the raw code still works.
- */
-export function inviteLink(code: string): string {
-  return createLink(APP_SLUG, "join", { invitation: code });
 }
 
 /** The invite code carried by a link, or the input unchanged if it isn't one. */

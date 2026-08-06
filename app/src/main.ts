@@ -13,7 +13,7 @@ import { raycast } from "./engine/raycast";
 import { dayFactor, skyColor } from "./engine/sim";
 import { generateWorld, spawnPoint } from "./engine/terrain";
 import { WorldStore, WORLD_CX, WORLD_CY, WORLD_CZ, chunkKey } from "./engine/world";
-import { inviteLink } from "./net/inviteCodec";
+import { inviteLink } from "./net/inviteLink";
 import { createWorldInvite } from "./net/admin";
 import { GameClient } from "./net/client";
 import { captureSessionFromHash, getSession, hasConnection } from "./net/session";

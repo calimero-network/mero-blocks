@@ -1,12 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  APP_SLUG,
   decodeInvite,
   encodeInvite,
-  inviteLink,
   namespaceIdOfInvite,
   WorldInvitePayload,
 } from "../src/net/inviteCodec";
+import { APP_SLUG, inviteLink } from "../src/net/inviteLink";
 import { acceptWorldInvite, createWorldInvite } from "../src/net/admin";
 import { getSession, resetSession, updateSession } from "../src/net/session";
 

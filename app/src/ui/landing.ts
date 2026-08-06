@@ -27,7 +27,7 @@ import {
   worldNameOf,
 } from "../net/admin";
 import { beginWebLogin } from "../net/auth";
-import { inviteLink } from "../net/inviteCodec";
+import { inviteLink } from "../net/inviteLink";
 import { clearSession, getSession, hasConnection, isAuthenticated, updateSession } from "../net/session";
 import { deleteWorld } from "../state/persistence";
 import { Panorama } from "./panorama";
